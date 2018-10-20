@@ -1,0 +1,2 @@
+# CQOthello
+Othello Game
