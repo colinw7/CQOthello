@@ -76,9 +76,9 @@ canMove(int x, int y, COthelloPieceValue piece)
 
 bool
 COthelloBoard::
-canMoveDirection(int x, int y, int dx, int dy,
-                 COthelloPieceValue piece,
-                 COthelloPieceValue other_piece) {
+canMoveDirection(int x, int y, int dx, int dy, COthelloPieceValue piece,
+                 COthelloPieceValue other_piece)
+{
   int x1 = x + dx;
   int y1 = y + dy;
 
@@ -135,9 +135,9 @@ doMove(int x, int y, COthelloPieceValue piece)
 
 void
 COthelloBoard::
-doMoveDirection(int x, int y, int dx, int dy,
-                COthelloPieceValue piece,
-                COthelloPieceValue other_piece) {
+doMoveDirection(int x, int y, int dx, int dy, COthelloPieceValue piece,
+                COthelloPieceValue other_piece)
+{
   int x1 = x + dx;
   int y1 = y + dy;
 

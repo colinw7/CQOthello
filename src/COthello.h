@@ -14,11 +14,6 @@ class COthelloPiece {
 };
 
 class COthelloBoard {
- private:
-  COthelloPieceValue board_[8][8];
-
-  static int board_score_[8][8];
-
  public:
   COthelloBoard();
 
@@ -41,23 +36,24 @@ class COthelloBoard {
 
   static void copy(const COthelloBoard &board1, COthelloBoard &board2);
 
-  bool getBestMove(COthelloPieceValue piece, int depth,
-                   int *x, int *y);
+  bool getBestMove(COthelloPieceValue piece, int depth, int *x, int *y);
 
  private:
-  bool canMoveDirection(int x, int y, int dx, int dy,
-                        COthelloPieceValue piece,
+  bool canMoveDirection(int x, int y, int dx, int dy, COthelloPieceValue piece,
                         COthelloPieceValue other_piece);
-  void doMoveDirection (int x, int y, int dx, int dy,
-                        COthelloPieceValue piece,
+  void doMoveDirection (int x, int y, int dx, int dy, COthelloPieceValue piece,
                         COthelloPieceValue other_piece);
 
   int getNum(COthelloPieceValue piece);
 
-  bool getBestMove1(COthelloPieceValue piece, int depth,
-                    int *x, int *y, int *score);
+  bool getBestMove1(COthelloPieceValue piece, int depth, int *x, int *y, int *score);
 
   bool flipCoin();
+
+ private:
+  COthelloPieceValue board_[8][8];
+
+  static int board_score_[8][8];
 };
 
 #endif
