@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+.button {
+  background-color: #aaddaa;
+  border: none;
+  color: black;
+  padding: 2px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+}
+
+.button:disabled {
+  background-color: #dddddd; 
+  color: #aaaaaa;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Othello</title>
+<script src="othello.js" type="text/javascript"></script>
+</head>
+<body>
+<div style="position: absolute; top: 4px; left: 654px;">
+<p id="colorLabel">XXX</p>
+</div>
+<div style="position: absolute; top: 44px; left: 654px;">
+<p id="scoreLabel">XXX</p>
+</div>
+<div style="position: absolute; top: 84px; left: 654px;">
+<input class="button" type="button" id="newGameButton" value="New Game">
+</div>
+<canvas id="canvas" width="640" height="640">
+Your browser does not support HTML 5 Canvas.
+</canvas>
+</body>
+</html>
