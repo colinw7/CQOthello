@@ -31,7 +31,7 @@ main(int argc, char **argv)
 CQOthello::
 CQOthello()
 {
-  cell_size_ = 64;
+  cell_size_ = 64; // must match png
 
   black_pixmap_.loadFromData(black_piece_data, BLACK_PIECE_DATA_LEN);
   white_pixmap_.loadFromData(white_piece_data, WHITE_PIECE_DATA_LEN);
