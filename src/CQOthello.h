@@ -17,9 +17,9 @@ class CQOthelloCanvas : public CQCanvas2D {
   CQOthelloCanvas(CQOthello *othello);
 
  private:
-  void drawContents(QPainter *);
+  void drawContents(QPainter *) override;
 
-  void mousePressEvent(QMouseEvent *);
+  void mousePressEvent(QMouseEvent *) override;
 };
 
 class COthelloBoard;
