@@ -15,16 +15,19 @@ class COthelloPiece {
 
 class COthelloBoard {
  public:
+  using PieceValue = COthelloPieceValue;
+
+ public:
   COthelloBoard();
 
   void init();
 
-  bool canMoveAnywhere(COthelloPieceValue piece);
+  bool canMoveAnywhere(PieceValue piece);
 
-  bool canMove(int x, int y, COthelloPieceValue piece);
-  void doMove (int x, int y, COthelloPieceValue piece);
+  bool canMove(int x, int y, PieceValue piece);
+  void doMove (int x, int y, PieceValue piece);
 
-  COthelloPieceValue getPiece(int x, int y);
+  PieceValue getPiece(int x, int y);
 
   int getNumWhite();
   int getNumBlack();
@@ -32,28 +35,26 @@ class COthelloBoard {
 
   int getMoves();
 
-  int score(COthelloPieceValue piece);
+  int score(PieceValue piece);
 
   static void copy(const COthelloBoard &board1, COthelloBoard &board2);
 
-  bool getBestMove(COthelloPieceValue piece, int depth, int *x, int *y);
+  bool getBestMove(PieceValue piece, int depth, int *x, int *y);
 
  private:
-  bool canMoveDirection(int x, int y, int dx, int dy, COthelloPieceValue piece,
-                        COthelloPieceValue other_piece);
-  void doMoveDirection (int x, int y, int dx, int dy, COthelloPieceValue piece,
-                        COthelloPieceValue other_piece);
+  bool canMoveDirection(int x, int y, int dx, int dy, PieceValue piece, PieceValue other_piece);
+  void doMoveDirection (int x, int y, int dx, int dy, PieceValue piece, PieceValue other_piece);
 
-  int getNum(COthelloPieceValue piece);
+  int getNum(PieceValue piece);
 
-  bool getBestMove1(COthelloPieceValue piece, int depth, int *x, int *y, int *score);
+  bool getBestMove1(PieceValue piece, int depth, int *x, int *y, int *score);
 
   bool flipCoin();
 
  private:
-  COthelloPieceValue board_[8][8];
-
   static int board_score_[8][8];
+
+  PieceValue board_[8][8];
 };
 
 #endif
